@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Container -->
+  <div class="container-xxl container-fluid">
+    <h2 class="heading w-100 text-center bg-white text-primary py-3 py-lg-4 m-0 position-sticky top-0">News</h2>
+    <!-- News wrapper -->
+    <div class="news-wrapper row">
+      <div class="news-left bg-white  col-12 col-xl-3 position-sticky  d-flex justify-content-between align-items-center align-items-lg-end d-xl-block flex-column flex-lg-row">
+        <!-- Form Filter -->
+        <form class="filter-form w-100 js-filter-form d-flex flex-column flex-md-row flex-xl-column justify-content-xl-center align-items-center align-items-xl-start mt-3 " action="https://echo.htmlacademy.ru" method="post">
+          <label class="fs-5 fw-bold w-100 text-primary mb-0 mb-md-3" for="search-input">
+            Search news
+            <input class="js-news-search form-control" id="search-input" type="text" placeholder="Tesla" autocomplete="off">
+          </label>
+
+
+          <label class="fs-5 w-100 fw-bold text-primary mb-0 mb-md-3"  for="sort-news">
+            Sort
+            <select class="form-select js-sort-select" name="news_sort" id="sort-news">
+              <option value="newest" selected>Newest</option>
+
+              <option value="popular">Popular news</option>
+
+              <option value="relevency">More related news</option>
+            </select>
+          </label>
+        <p class="text-success js-founded-articles-number my-1 w-100"></p>
+        </form>
+
+        <!-- Pagination -->
+        <div class="pagination d-flex gap-3 pb-4 align-items-center justify-content-start justify-content-md-between">
+          <button class="btn btn-outline-primary active page-1 px-3">1</button>
+
+          <button class="btn btn-outline-primary page-2 px-3">2</button>
+
+          <button class="btn btn-outline-primary page-3 px-3">3</button>
+
+          <button class="btn btn-outline-primary page-4 px-3">4</button>
+
+          <button class="btn btn-outline-primary page-5 px-3">5</button>
+        </div>
+      </div>
+
+      <!-- News List -->
+      <div class="news-right position-relative col-12 col-xl-9 mt-4 mt-lg-2">
+        
+        <ul class="js-news-list p-0 position-relative"></ul>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Card template -->
+<template id="news-card">
+  <li class="card mb-3" data-news-id="">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img class="news-img w-100 h-100" src="https://www.fool.com.au/wp-content/uploads/2022/02/EV-driver-16.9.jpg" class="rounded-start" alt="...">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">
+            The Tesla share price has rallied 18% in less than a fortnight. What’s going on?
+          </h5>
+
+          <p class="card-text mb-2">
+            Why has the Tesla share price risen so rapidly? The post The Tesla share price has rallied 18% in less than a fortnight. What’s going on? appeared first on The Motley Fool Australia.
+          </p>
+
+          <a class="text-decoration-none" href="https://www.fool.com.au/2022/06/02/the-tesla-share-price-has-rallied-18-in-less-than-a-fortnight-whats-going-on/" target="_blank">This Article from ></a>
+
+          <p class="card-text"><small class="text-muted news-data">2022-06-02</small></p>
+
+          <button type="button" class="js-modal-btn btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            More
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </li>
+</template>
+
+<!-- Modal template -->
+<template id="news-modal">
+<div class="modal fade js-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="modal-img w-100 h-100" src="https://www.fool.com.au/wp-content/uploads/2022/02/EV-driver-16.9.jpg" class="rounded-start" alt="...">
+        <h5 class="modal-title card-title mb-3">
+          The Tesla share price has rallied 18% in less than a fortnight. What’s going on?
+        </h5>
+
+        <p class="modal-description mb-2">
+          Why has the Tesla share price risen so rapidly? The post The Tesla share price has rallied 18% in less than a fortnight. What’s going on? appeared first on The Motley Fool Australia.
+        </p>
+
+        <p class="modal-text mb-2">
+          The Tesla Inc (NASDAQ: TSLA) share price has had a stellar run in the past couple of weeks.Tesla shares have soared 18% from $628.16 at the market close on 24 May to the current price of $740.37.r… [+1819 chars]"
+        </p>
+
+        <p class="article-author fw-normal text-primary text-end">Monica O'Shea</p>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+
+
+  <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="./js/utilts.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
