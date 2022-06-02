@@ -1,3 +1,11 @@
+// =============CALL FETCH API============
+let FETCH_API = "";
+let fetchFunction = function(search = "tesla", sort = "publishedAt", page = 1){
+  FETCH_API = `https://newsapi.org/v2/everything?q=${search}&from=2022-05-02&language=en&sortBy=${sort}&page=${page}&apiKey=07716a2a69e8430ea7777488ccf106bc`;
+
+  return FETCH_API
+}
+
 // =========CALL FORM ELEMENTS=======
 let elFilterForm = $(".js-filter-form");
 let elSearchInput = $(".js-news-search", elFilterForm);
@@ -20,13 +28,7 @@ let elCardTemplate = $("#news-card").content;
 let elModalTemplate = $("#news-modal").content;
 
 
-// =============CALL FETCH API============
-let FETCH_API = "";
-let fetchFunction = function(search = "tesla", sort = "publishedAt", page = 1){
-  FETCH_API = `https://newsapi.org/v2/everything?q=${search}&from=2022-05-02&language=en&sortBy=${sort}&page=${page}&apiKey=07716a2a69e8430ea7777488ccf106bc`;
 
-  return FETCH_API
-}
 
 
 
