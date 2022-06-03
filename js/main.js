@@ -1,8 +1,7 @@
 // =============CALL FETCH API============
 let FETCH_API = "";
 let fetchFunction = function(search = "tesla", sort = "publishedAt", page = 1){
-  FETCH_API = `https://newsapi.org/v2/everything?q=${search}&from=2022-05-02&language=en&sortBy=${sort}&page=${page}&apiKey=07716a2a69e8430ea7777488ccf106bc`;
-
+  FETCH_API = ` https://newsapi.org/v2/everything?q=${search}&from=2022-05-03&sortBy=${sort}&page=${page}&apiKey=650165aaa3e642218ea4a6214c9dfa95`;
   return FETCH_API
 }
 
